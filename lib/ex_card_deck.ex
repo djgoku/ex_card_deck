@@ -1,10 +1,6 @@
 defmodule ExCardDeck do
   use GenServer
 
-  @moduledoc """
-  Provides a way to create and shuffle a deck of cards.
-  """
-
   def start_link(number_of_decks \\ 1) do
     GenServer.start_link(__MODULE__, number_of_decks, [name: __MODULE__])
   end
@@ -26,7 +22,13 @@ defmodule ExCardDeck do
       iex> ExCardDeck.get_card
       {:heart, "2"}
 
+      # When all cards have been dealt.
+      iex> ExCardDeck.get_card
+      nil
+
   """
+
+  @spec get_card() :: {atom(), String.t} | nil
   def get_card() do
     GenServer.call(__MODULE__, :get_card)
   end
