@@ -1,11 +1,11 @@
 # ExCardDeck
 
-**TODO: Add description**
+Provides an easy way to get a single or multiple decks of cards pre-shuffled. When you need
+a new deck just call the shuffle method for more cards.
 
-## Installation
+Getting Started
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ex_card_deck` to your list of dependencies in `mix.exs`:
+## Adding ExCardDeck to your project:
 
 ```elixir
 def deps do
@@ -13,9 +13,23 @@ def deps do
     {:ex_card_deck, "~> 0.1.0"}
   ]
 end
+
+defp application do
+  [applications: [:ex_card_deck]]
+end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/ex_card_deck](https://hexdocs.pm/ex_card_deck).
+Quick Introduction
 
+```elixir
+> use ExCardDeck
+> ExCardDeck.start_link()
+> ExCardDeck.get_card()
+{:spades, "A"}
+... 51 other cards later
+> ExCardDeck.get_card()
+nil
+> ExCardDeck.shuffle()
+> ExCardDeck.get_card()
+{:hearts, "5"}
+```
