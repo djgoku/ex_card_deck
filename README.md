@@ -25,11 +25,11 @@ Quick Introduction
 > use ExCardDeck
 > ExCardDeck.start_link()
 > ExCardDeck.get_card()
-{:spades, "A"}
+{:spades, "A", 127137, [1,11]}
 ... 51 other cards later
 > ExCardDeck.get_card()
 nil
 > ExCardDeck.shuffle()
 > ExCardDeck.get_card()
-{:hearts, "5"}
+{:hearts, "5", 127158, [5]}
 ```
