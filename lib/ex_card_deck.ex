@@ -28,7 +28,7 @@ defmodule ExCardDeck do
 
   """
 
-  @spec get_card() :: {atom(), String.t} | nil
+  @spec get_card() :: {atom(), String.t, pos_integer(), nonempty_list()} | nil
   def get_card() do
     GenServer.call(__MODULE__, :get_card)
   end
